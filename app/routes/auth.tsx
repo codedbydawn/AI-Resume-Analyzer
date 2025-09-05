@@ -12,10 +12,12 @@ const Auth:() => React.JSX.Element = () => {
     const next = location.search.split('next=')[1];
     const navigate = useNavigate();
 
+    /* Redirect if authenticated */
     useEffect(() => {
         if (auth.isAuthenticated) navigate(next);
-
     }, [auth.isAuthenticated])
+
+
     return (
         <main className="bg-[url('/images/bg-auth.svg')] bg-cover min-h-screen flex items-center justify-center">
             <div className="gradient-border shadow-lg">

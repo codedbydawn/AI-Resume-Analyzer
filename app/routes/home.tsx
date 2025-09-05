@@ -17,7 +17,7 @@ export default function Home() {
     const {auth} = usePuterStore();
     const navigate = useNavigate();
 
-    /* user tries to access homepage but since not authed, bring back to next with next as param*/
+    /* user tries to access homepage but since not authed, bring back to signin with next as param*/
     useEffect(() => {
         if (!auth.isAuthenticated) navigate('/auth?next=/');
     }, [auth.isAuthenticated])
